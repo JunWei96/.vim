@@ -26,13 +26,13 @@ set history=100
 
 " Logic when indenting
 filetype indent on
-set nowrap
+set wrap
 set tabstop=2
 set shiftwidth=2
 set expandtab
 set smartindent
 set autoindent
-
+set pastetoggle=<F3>
 " Show matching parenthesis
 set showmatch
 
@@ -84,7 +84,7 @@ let NERDTreeShowHidden=1
 " Do not display some useless files
 let NERDTreeIgnore=['\.DS_Store','\-$','\.swp']
 " Map a Ctrl+n to toggle NERDTree
-map <leader>n :NERDTreeToggle<CR>
+map <leader>nt :NERDTreeToggle<CR>
 " Close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Setting different color for different file type
