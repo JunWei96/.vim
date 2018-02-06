@@ -1,20 +1,28 @@
 execute pathogen#infect()
 call pathogen#helptags()
 
-" nerdcommenter
+filetype on
 filetype plugin on
+syntax on
 
 " setting color scheme for vim
-filetype on
-syntax on
+"let g:solarized_termcolors=256
+"set t_Co=256
+"set background=dark
+"colorscheme solarized
+
+autocmd! FileType c,cpp,java,php call CSyntaxAfter()
+" Setting color scheme for Tomorrow-Night
 colorscheme Tomorrow-Night
+
 
 " setting font to Menlo Regular 18pts
 set guifont=Menlo\ Regular:h18
 set lines=35 columns=120
-set colorcolumn=90
+set colorcolumn=80
 " add line numbering
 set number
+set relativenumber
 
 let mapleader=" "
 " Reload vim Config without having to restart editor
@@ -33,6 +41,7 @@ set expandtab
 set smartindent
 set autoindent
 set pastetoggle=<F3>
+set whichwrap+=<,>,h,l,[,]
 " Show matching parenthesis
 set showmatch
 
@@ -111,5 +120,26 @@ map <leader>l :tabn<CR>
 map <leader>h :tabp<CR>
 map <leader>n :tabnew<CR>
 
+" Commenting
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+" Align line-wise comment delimiters flush left instead of following code
+" indentation
+let g:NERDDefaultAlign = 'left'
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+" Allow commenting and inverting empty lines (useful when commenting a
+" region)
+let g:NERDCommentEmptyLines = 1
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+
 " Git gutter plug-in
 let g:gitgutter_sign_column_always=1
+
+set omnifunc=syntaxcomplete#Complete
