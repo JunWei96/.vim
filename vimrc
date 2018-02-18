@@ -5,12 +5,6 @@ filetype on
 filetype plugin on
 syntax on
 
-" setting color scheme for vim
-"let g:solarized_termcolors=256
-"set t_Co=256
-"set background=dark
-"colorscheme solarized
-
 autocmd! FileType c,cpp,java,php call CSyntaxAfter()
 " Setting color scheme for Tomorrow-Night
 colorscheme Tomorrow-Night
@@ -19,7 +13,7 @@ colorscheme Tomorrow-Night
 " setting font to Menlo Regular 18pts
 set guifont=Menlo\ Regular:h18
 set lines=35 columns=120
-set colorcolumn=80
+set colorcolumn=90
 " add line numbering
 set number
 set relativenumber
