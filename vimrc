@@ -137,3 +137,8 @@ let g:NERDTrimTrailingWhitespace = 1
 let g:gitgutter_sign_column_always=1
 
 set omnifunc=syntaxcomplete#Complete
+
+" Ctrlp file finder
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_map = '<leader>t'
+noremap <Leader>r :CtrlPClearCache
